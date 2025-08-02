@@ -26,10 +26,12 @@ export default function DashboardLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen w-ful flex  antialiased`}
       >
         <SideBar></SideBar>
-        {children}
+        <main className="bg-gray-50 p-4 w-full font-sans text-gray-900 sm:p-6 md:p-8">
+          <div className="mx-auto w-full max-w-[1650px]">{children}</div>
+        </main>
       </body>
     </html>
   );
