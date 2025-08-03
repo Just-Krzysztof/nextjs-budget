@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <div className="w-full flex gap-4 flex-col md:flex-row">
-        <article className="rounded-lg border border-gray-100 w-full bg-white p-6 md:w-1/3">
+        <article className="rounded-lg border border-gray-100 w-full bg-white p-6 md:w-1/3 md-h-[200px]">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-500">Year summary</p>
@@ -76,8 +76,8 @@ export default function Home() {
         </article>
       </div>
 
-      <div className="w-full flex flex-col md:flex-row mt-4 gap-4">
-        <div className="md:w-[50%]">
+      <div className="w-full flex flex-col lg:flex-row mt-4 gap-4">
+        <div className="lg:w-[50%]">
           <article className="rounded-lg border border-gray-100 w-full bg-white p-6 ">
             <div className="flex items-center gap-4">
               <BiTrendingUp className="w-[45px]" />
@@ -119,8 +119,19 @@ export default function Home() {
             </ul>
           </article>
         </div>
-        <div className="md:w-[50%]">
-          <MyLineChart data={sampleData} height="100%" />
+        <div className="lg:w-[50%]">
+          <article className="rounded-lg border border-gray-100 w-full bg-white p-6">
+            <div className="flex flex-col">
+              <p className="text-sm text-gray-500 self-start">Last Month</p>
+              <div className="w-full h-44 min-h-[120px]">
+                <MyLineChart
+                  data={sampleData}
+                  height="100%"
+                  showLegend={false}
+                />
+              </div>
+            </div>
+          </article>
         </div>
       </div>
       {/* <div className="w-full flex flex-col md:flex-row mt-4 gap-4">
