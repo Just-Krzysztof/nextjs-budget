@@ -9,7 +9,7 @@ import { LiaPiggyBankSolid } from "react-icons/lia";
 
 
 const navLinks = [
-  { href: '/home', icon: <LuLayoutDashboard />, label: 'Dashboard' },
+  { href: '/', icon: <LuLayoutDashboard />, label: 'Dashboard' },
   { href: '/transactions', icon: <BsCashCoin />, label: 'Transactions' },
   { href: '/accounts', icon: <MdOutlineSwitchAccount />, label: 'Accounts' },
   { href: '/budget', icon: <LiaPiggyBankSolid />, label: 'Budget' },
