@@ -12,6 +12,7 @@ const accountsData = [
     currency: 'zł',
     currencyLong: 'PLN-zł',
     lastUsed: '23.07.2025',
+    isDefault: true,
     lastTransaction: {
       price: 12,
       currency: 'zł',
@@ -28,6 +29,7 @@ const accountsData = [
     currency: 'zł',
     currencyLong: 'PLN-zł',
     lastUsed: '23.07.2025',
+    isDefault: false,
     lastTransaction: {
       price: 0.04,
       currency: 'zł',
@@ -44,6 +46,7 @@ const accountsData = [
     currency: 'zł',
     currencyLong: 'PLN-zł',
     lastUsed: '28.07.2025',
+    isDefault: false,
     lastTransaction: {
       price: 98.0,
       currency: 'zł',
@@ -60,6 +63,7 @@ const accountsData = [
     currency: 'zł',
     currencyLong: 'PLN-zł',
     lastUsed: '23.07.2025',
+    isDefault: false,
     lastTransaction: {
       price: 600,
       currency: 'zł',
@@ -76,6 +80,7 @@ const accountsData = [
     currency: 'zł',
     currencyLong: 'PLN-zł',
     lastUsed: '23.07.2025',
+    isDefault: false,
     lastTransaction: {
       price: 10.2,
       currency: 'zł',

@@ -4,23 +4,24 @@ import { useState, useRef } from 'react';
 import { AccountBox } from './AccountBox';
 import { CiMenuKebab } from 'react-icons/ci';
 import { useOutsideClick } from '@/utils/useOutsideClick';
-
-interface IAccounts {
-  id: string;
-  name: string;
-  balance: number;
-  currency: string;
-  currencyLong: string;
-  lastUsed: string;
-  lastTransaction: {
-    price: number;
-    currency: string;
-    title: string;
-    payee: string;
-  };
-  incomeInAccount: number;
-  creationDate: string;
-}
+import type { IAccounts } from '@/app/types/Accounts';
+// interface IAccounts {
+//   id: string;
+//   name: string;
+//   balance: number;
+//   currency: string;
+//   currencyLong: string;
+//   lastUsed: string;
+//   isDefault: boolean;
+//   lastTransaction: {
+//     price: number;
+//     currency: string;
+//     title: string;
+//     payee: string;
+//   };
+//   incomeInAccount: number;
+//   creationDate: string;
+// }
 
 interface AccountsInteractiveProps {
   accountsData: IAccounts[];
@@ -131,6 +132,10 @@ export const AccountsInteractive = ({
                         </p>
                         <p className="block px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900">
                           Transfer
+                          {/* modal, z wyborem na jakie accoutn z tego account */}
+                        </p>
+                        <p className="block px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900">
+                          Default account
                           {/* modal, z wyborem na jakie accoutn z tego account */}
                         </p>
                       </div>

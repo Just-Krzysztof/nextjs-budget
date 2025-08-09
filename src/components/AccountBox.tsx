@@ -1,21 +1,5 @@
 'use client';
-
-interface IAccounts {
-  id: string;
-  name: string;
-  balance: number;
-  currency: string;
-  currencyLong: string;
-  lastUsed: string;
-  lastTransaction: {
-    price: number;
-    currency: string;
-    title: string;
-    payee: string;
-  };
-  incomeInAccount: number;
-  creationDate: string;
-}
+import type { IAccounts } from '@/app/types/Accounts';
 
 interface AccountBoxProps {
   item: IAccounts;
