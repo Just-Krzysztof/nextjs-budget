@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { AccountBox } from './AccountBox';
 import { CiMenuKebab } from 'react-icons/ci';
+import { useOutsideClick } from '@/utils/useOutsideClick';
 
 interface IAccounts {
   id: string;
@@ -33,8 +34,18 @@ export const AccountsInteractive = ({
   );
   const [dropdownActive, setDropdownActive] = useState<boolean>(false);
 
+  const detailsRef = useOutsideClick(() => {
+    setSelectedAccount(null);
+  });
+
+  const dropdownRef = useOutsideClick(() => {
+    setDropdownActive(false);
+  });
+
   const handleAccountSelect = (account: IAccounts) => {
-    setSelectedAccount(account);
+    selectedAccount?.id === account.id
+      ? setSelectedAccount(null)
+      : setSelectedAccount(account);
   };
 
   return (
@@ -53,7 +64,10 @@ export const AccountsInteractive = ({
       </div>
       <div className="lg:w-[50%]">
         {selectedAccount && (
-          <div className="rounded-lg p-4 shadow-xs shadow-indigo-100 w-[100%]">
+          <div
+            className="rounded-lg p-4 shadow-xs shadow-indigo-100 w-[100%]"
+            ref={detailsRef}
+          >
             <h3 className="text-xl font-bold text-center">
               {selectedAccount.name} details
             </h3>
@@ -90,6 +104,7 @@ export const AccountsInteractive = ({
               <div
                 className="relative w-10 text-center cursor-pointer group"
                 onClick={() => setDropdownActive(!dropdownActive)}
+                ref={dropdownRef}
               >
                 <span className="inline-flex divide-x divide-gray-300 overflow-hidden duration-450 group-hover:scale-150 transform transition-transform">
                   <CiMenuKebab className="rotate-90" />
