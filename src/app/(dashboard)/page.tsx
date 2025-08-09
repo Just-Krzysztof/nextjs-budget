@@ -10,9 +10,26 @@ import { BiTrendingDown } from 'react-icons/bi';
 import { FaSackDollar } from 'react-icons/fa6';
 
 const sampleData = [
-  { name: 'Income', value: 400 },
-  { name: 'Expanses', value: 300 },
-  { name: 'Save', value: 2350 },
+  { name: '01-02-2025', value: 400 },
+  { name: '02-02-2025', value: 40 },
+  { name: '03-02-2025', value: 100 },
+  { name: '04-02-2025', value: 20 },
+  { name: '05-02-2025', value: 4 },
+  { name: '06-02-2025', value: 120 },
+  { name: '07-02-2025', value: 40 },
+  { name: '08-02-2025', value: 400 },
+  { name: '09-02-2025', value: 440 },
+  { name: '10-02-2025', value: 440 },
+  { name: '11-02-2025', value: 40 },
+  { name: '12-02-2025', value: 0 },
+  { name: '13-02-2025', value: 0 },
+  { name: '14-02-2025', value: 0 },
+  { name: '15-02-2025', value: 20 },
+  { name: '16-02-2025', value: 10 },
+  { name: '17-02-2025', value: 20 },
+  { name: '18-02-2025', value: 30 },
+  { name: '19-02-2025', value: 40 },
+  { name: '20-02-2025', value: 50 },
 ];
 
 const pieChartData = [
@@ -27,6 +44,7 @@ export async function generateMetadata() {
 export default function Home() {
   return (
     <>
+      <h1 className="text-3xl font-bold mb-8">Dashboard</h1>
       <div className="w-full flex gap-4 flex-col md:flex-row">
         <article className="rounded-lg border border-gray-100 w-full bg-white p-6 md:w-1/3 md-h-[200px]">
           <div className="flex items-center justify-between">
@@ -134,6 +152,7 @@ export default function Home() {
           </article>
         </div>
       </div>
+      {/* TODO To be completed */}
       {/* <div className="w-full flex flex-col md:flex-row mt-4 gap-4">
           <div className="w-full md:w-1/2 bg-white p-6 rounded-lg border border-gray-100">
             <h3 className="text-lg font-medium text-gray-900 mb-4">Monthly Trends</h3>
