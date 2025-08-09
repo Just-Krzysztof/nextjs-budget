@@ -5,23 +5,6 @@ import { AccountBox } from './AccountBox';
 import { CiMenuKebab } from 'react-icons/ci';
 import { useOutsideClick } from '@/utils/useOutsideClick';
 import type { IAccounts } from '@/app/types/Accounts';
-// interface IAccounts {
-//   id: string;
-//   name: string;
-//   balance: number;
-//   currency: string;
-//   currencyLong: string;
-//   lastUsed: string;
-//   isDefault: boolean;
-//   lastTransaction: {
-//     price: number;
-//     currency: string;
-//     title: string;
-//     payee: string;
-//   };
-//   incomeInAccount: number;
-//   creationDate: string;
-// }
 
 interface AccountsInteractiveProps {
   accountsData: IAccounts[];
@@ -47,6 +30,20 @@ export const AccountsInteractive = ({
     selectedAccount?.id === account.id
       ? setSelectedAccount(null)
       : setSelectedAccount(account);
+  };
+
+  const handleDefaultAccount = (account: IAccounts) => {
+    const checkAllAccounts = accountsData.find(x => x.isDefault === true);
+    console.log(checkAllAccounts);
+    if (checkAllAccounts?.id !== account.id) {
+      account.isDefault = true;
+      if (checkAllAccounts) {
+        checkAllAccounts.isDefault = false;
+      }
+    } else return;
+
+    console.log('checkAllAccounts', checkAllAccounts);
+    console.log('account', account);
   };
 
   return (
@@ -134,7 +131,10 @@ export const AccountsInteractive = ({
                           Transfer
                           {/* modal, z wyborem na jakie accoutn z tego account */}
                         </p>
-                        <p className="block px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900">
+                        <p
+                          className="block px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                          onClick={() => handleDefaultAccount(selectedAccount)}
+                        >
                           Default account
                           {/* modal, z wyborem na jakie accoutn z tego account */}
                         </p>

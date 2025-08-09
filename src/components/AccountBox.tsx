@@ -14,7 +14,7 @@ export const AccountBox = ({
   return (
     <>
       <div
-        className={`rounded-lg p-4 shadow-xs sm:w-[45%] w-[100%] flex justify-between items-center cursor-pointer transition-all ${
+        className={`relative rounded-lg p-4 shadow-xs sm:w-[45%] w-[100%] flex justify-between items-center cursor-pointer transition-all ${
           isSelected
             ? 'shadow-indigo-300 border-2 border-indigo-300 bg-indigo-50'
             : 'shadow-indigo-100 border-2 border-transparent hover:shadow-indigo-200'
@@ -34,6 +34,11 @@ export const AccountBox = ({
             <span>{item.currencyLong}</span>
           </div>
         </div>
+        {item.isDefault && (
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-xs bg-indigo-500 text-white px-2 py-1 rounded-b-md">
+            Default
+          </div>
+        )}
       </div>
     </>
   );

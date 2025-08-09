@@ -12,7 +12,7 @@ const accountsData = [
     currency: 'zł',
     currencyLong: 'PLN-zł',
     lastUsed: '23.07.2025',
-    isDefault: true,
+    isDefault: false,
     lastTransaction: {
       price: 12,
       currency: 'zł',
